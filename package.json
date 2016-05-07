@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "node-telegram-bot-api": "^0.21.1"
+  },
+  "devDependencies": {
+    "dotenv": "^2.0.0"
   }
 }
