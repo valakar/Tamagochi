@@ -7,9 +7,9 @@ console.log(token);
 var bot = new TelegramBot(token, {polling: true});
 
 // Matches /echo [whatever]
-bot.onText(/test/, function (msg, match) {
+bot.onText(/^1/, function (msg, match) {
     var fromId = msg.from.id;
     var resp = match[1];
-    bot.sendMessage(fromId, 'pohs');
+    bot.sendMessage(fromId, msg.from.id);
 });
 
