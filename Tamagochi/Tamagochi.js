@@ -1,30 +1,43 @@
-const MockStorage = {
-    get: get
-};
+const Storage = require('../Storage/Storage');
 
 class Tamagochi {
-    constructor(id) {
-        this.entity = MockStorage.get(id);
+    constructor() {
     }
 
-    getStatus() {
-        return this.entity.status;
+    initiate(id) {
+        return Storage.get(id)
+            .then((tamagochi) => {
+                if (tamagochi) {
+                    return `${tamagochi.name}: Hello Master :)`
+                }
+                return 'You dont have tamagochi yet :('
+            });
+    }
+    
+    
+
+    createNew(name, id) {
+        return Storage.create(name, id)
+            .then((tamagochi) => {
+                if (tamagochi) {
+                    return `${tamagochi.name}: Привет Хозяин:)`
+                }
+                return 'Рожусь позже :('
+            });
     }
 
-    feed(amount) {
-        return this.entity.satiety += amount;
+    getStatus(id) {
+        return Storage.get(id)
+            .then((tamagochi) => {
+                if (tamagochi) {
+                    return 'Все четко!';
+                }
+                return 'Я еще не вылупился :('
+            })
+    }
+
+    feed(id, amount) {
     }
 }
 
-function get(id) {
-    const status = {
-        satiety: 50
-    };
-
-    return {
-        name: "TestGochi",
-        status: status
-    }
-}
-
-module.exports = Tamagochi;
+module.exports = new Tamagochi();
