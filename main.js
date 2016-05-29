@@ -36,3 +36,7 @@ bot.onText(/\/hello/, function (msg, match) {
 
     bot.sendMessage(fromId, 'World!');
 });
+
+process.on('unhandledRejection', (reason, p) => {
+    process.exit(1);
+});
