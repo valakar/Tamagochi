@@ -1,3 +1,5 @@
+'use strict';
+
 const Storage = require('../Storage/Storage');
 
 class Tamagochi {

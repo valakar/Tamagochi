@@ -1,3 +1,5 @@
+'use strict';
+
 const TamagochiModel = require('./Tamagochi.model');
 
 class Storage {

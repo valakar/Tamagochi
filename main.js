@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DB_CONNECTION);
-
+//
 const Tamagochi = require('./Tamagochi/Tamagochi');
 const TelegramBot = require('node-telegram-bot-api');
 
@@ -30,3 +30,9 @@ bot.onText(/\/create (.+)/, function (msg, match) {
         });
 });
 
+//Matches /echo [whatever]
+bot.onText(/\/hello/, function (msg, match) {
+    const fromId = msg.from.id;
+
+    bot.sendMessage(fromId, 'World!');
+});

@@ -10,10 +10,10 @@
   "author": "Andrii Lolo; Viktor Novak",
   "license": "ISC",
   "dependencies": {
-    "node-telegram-bot-api": "^0.21.1"
-  },
-  "devDependencies": {
+    "node-telegram-bot-api": "^0.21.1",
     "dotenv": "^2.0.0",
     "mongoose": "^4.4.15"
+  },
+  "devDependencies": {
   }
 }
